@@ -1,0 +1,7 @@
+tqdm==4.67.1
+weaviate-client
+rich==13.9.4
+python-json-logger==3.2.1
+openai==1.58.1
+requests==2.32.3
+litellm==1.55.9
