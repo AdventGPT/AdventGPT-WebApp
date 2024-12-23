@@ -1,3 +1,4 @@
+import anvil.secrets
 from sentence_transformers import SentenceTransformer
 from weaviate.classes.init import Auth
 from weaviate.collections.classes.internal import (MetadataReturn, QueryReturn,
@@ -11,6 +12,7 @@ from openai import OpenAI
 from tqdm.notebook import tqdm
 import time
 from dataclasses import dataclass
+from rich import print
 
 class WeaviateWCS:
     '''

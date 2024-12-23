@@ -39,6 +39,16 @@ runtime_options:
   server_spec: {base: python310-minimal}
   server_version: python3-sandbox
   version: 2
+secrets:
+  OPENAI_API_KEY:
+    type: secret
+    value: {ETN4GP4PK2JWWYEQ: FRDKaYpRS2tEy86J/EHq+aclA6drYuZY/qOYIjM+VSSRTo8W3azdc5btmkf4Cgm2WAJxHS6Dp/nmBnrzr4GXHkhGzyy85p3UswtgTtudSndUwXAs0mKZY3YXrb4ruf12jEVrfsFfhCsxpkCm83O+Hq17dJJpxiD7BVABXqQ436xYjHgDSwkwxUt89A0XFP2iaUp0pfRRk0Hqeo8r/d0rg9LruGo1V2FmJyWOK94jZBWQx13j9+JFyqWreiT25TbZn5G0666O9vgXuryAdJmlswodzUyo97IAybprGShEY6LMVkPZHW5RTA2x3XkNxDdJbTyo7rRqUeUdrZOB4KLGiUSSKw==}
+  WEAVIATE_API_KEY:
+    type: secret
+    value: {ETN4GP4PK2JWWYEQ: +J8x50kDMqTCOGbxfA5OZtYroOtVCL2sYwmeSh7sF1OA1yOBB079tOQVNQyFsVqFSKIVVTkNs2KURGqNTnpv2byq3t0derDGafhmO6GleA6MLvlvWU3rrTh/G+mhH0Mo7fWFEFR3UH1dr0h93Ey9pLI4OESbefeB8SMKmhJ3gXbqrVs=}
+  WEAVIATE_ENDPOINT:
+    type: secret
+    value: {ETN4GP4PK2JWWYEQ: WazvCyO2thameSyGOFKnN9t8rT+aqeJBEyO5UQ47bcwCXy3m0c/e6bjfBerSLcLHInqpCFZseR9fjni3Z7gmmpdI+AVpSy6jSj4RFIpO7txFwwfi4El6l1c95Qeh3NqMpCYD3k6TZvzjp6+ueyGDtSRSnYfy6HntwtLU4RN7QP1MDgqZzB6+343+T8Diop5PA3TuozeaGmZx4uENGEU=}
 services:
 - client_config: {}
   server_config: {}
@@ -52,5 +62,8 @@ services:
 - client_config: {}
   server_config: {}
   source: /runtime/services/google.yml
+- client_config: {}
+  server_config: {}
+  source: /runtime/services/anvil/secrets.yml
 startup: {module: Main, type: form}
 startup_form: null

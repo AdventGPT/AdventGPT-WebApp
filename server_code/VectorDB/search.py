@@ -1,7 +1,7 @@
+import anvil.secrets
 import weaviate
 import os
-from vectordb.weaviate_client import WeaviateWCS, WeaviateIndexer
-
+from VectorDB.weaviate_client import WeaviateWCS, WeaviateIndexer
 # Pretty printer
 from rich import print
 
@@ -12,9 +12,9 @@ from rich import print
 COLLECTION_NAME = "egw_books"
 
 def create_client():
-    api_key = os.getenv('WEAVIATE_API_KEY')
-    endpoint = os.getenv('WEAVIATE_ENDPOINT')
-    openai_api_key = os.getenv('OPENAI_API_KEY')
+    api_key = anvil.secrets.get_secret("WEAVIATE_API_KEY")
+    endpoint = anvil.secrets.get_secret("WEAVIATE_ENDPOINT")
+    openai_api_key = anvil.secrets.get_secret("OPENAI_API_KEY")
     client = WeaviateWCS(endpoint=endpoint, api_key=api_key, 
                         openai_api_key=openai_api_key,
                         model_name="text-embedding-3-large",
