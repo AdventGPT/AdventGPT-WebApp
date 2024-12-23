@@ -8,3 +8,6 @@ unique_ids:
   scripts: {}
   server_modules:
     ServerModule: '1734970846322792566929710.4052'
+    VectorDB: '1734994824170277381339831.03076'
+    VectorDB.search: '173499483970790151369438.6622'
+    VectorDB.weaviate_client: '1734994872679996808241448.1562'
