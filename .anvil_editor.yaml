@@ -3,7 +3,7 @@ unique_ids:
     standard-page.html: TP3YGQOXLS3HPCQUXRKAR6KQ7HQBJFDX
     theme.css: 5TZHQISID42R3ZI5J2GDTBM35X64AHUB
   forms:
-    Form1: F6YR25SL2NEHP5HYJA3P4L3Z7SKMVB6K
+    Main: F6YR25SL2NEHP5HYJA3P4L3Z7SKMVB6K
   modules: {}
   scripts: {}
   server_modules: {}
