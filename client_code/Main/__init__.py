@@ -38,6 +38,9 @@ class Main(MainTemplate):
   def send_button_click(self, **event_args):
     """This method is called when the button is clicked"""
     self.user.append(self.item['chat_input_text'])
+    self.item['chat_input_text'] = ''
+    self.render()
+
     try:
       task = anvil.server.call('start_asking', self.item['chat_input_text'])
       while not task.is_completed():

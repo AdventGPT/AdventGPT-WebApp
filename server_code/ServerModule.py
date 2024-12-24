@@ -75,9 +75,9 @@ def ask(question):
                ]
   api_key = anvil.secrets.get_secret("OPENAI_API_KEY")
   response= completion(
-    model="gpt-4o",  # Specify the model
+    model="o1-mini",  # Specify the model
     messages=messages,    # Provide the conversation history
-    max_tokens=1024*30,   # Set the maximum number of tokens for a longer response
+    max_tokens=16384,   # Set the maximum number of tokens for a longer response
     api_key=api_key  # Pass the API key directly
   )
   
