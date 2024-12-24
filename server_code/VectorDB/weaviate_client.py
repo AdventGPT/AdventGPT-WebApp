@@ -11,6 +11,19 @@ from tqdm.notebook import tqdm
 import time
 from dataclasses import dataclass
 from rich import print
+from sentence_transformers import SentenceTransformer
+from weaviate.classes.init import Auth
+from weaviate.collections.classes.internal import (MetadataReturn, QueryReturn,
+                                                   MetadataQuery)
+import weaviate
+from weaviate.classes.config import Property, Configure
+from weaviate.classes.query import Filter
+from weaviate.config import ConnectionConfig
+from torch import cuda
+from openai import OpenAI
+from tqdm.notebook import tqdm
+import time
+from dataclasses import dataclass
 
 class WeaviateWCS:
     '''

@@ -12,8 +12,11 @@ components:
         margin: ['10', '5', '10', null]
         padding: [null, null, 0, null]
     type: RichText
-  - data_bindings: []
-    layout_properties: {full_width_row: true, grid_position: 'KQJFSL,WSXHYH'}
+  - layout_properties: {grid_position: 'MGHOUC,NKIFWH'}
+    name: cost_label
+    properties: {icon: 'fa:dollar'}
+    type: Label
+  - layout_properties: {full_width_row: true, grid_position: 'KQJFSL,WSXHYH'}
     name: cost_lable
     properties: {icon: 'fa:dollar', icon_align: left, spacing_above: large, text: ''}
     type: Label
