@@ -69,6 +69,7 @@ def ask(question):
     references_list.append(refereces_template.format(book=document["book"], chapter=document["chapter_title"], content = document["content"]))
   #references
   user_prompt = prompt_template.format(references="".join(references_list), prompt=question)  
+  print(user_prompt)
 
   messages=[ {"role": "system", "content": system_role},  # Define the system role
                  {"role": "user", "content": user_prompt}     # User query
