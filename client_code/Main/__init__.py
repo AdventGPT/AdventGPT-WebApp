@@ -8,6 +8,7 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.users
+import time
 
 
 class Main(MainTemplate):
@@ -37,9 +38,18 @@ class Main(MainTemplate):
   def send_button_click(self, **event_args):
     """This method is called when the button is clicked"""
     self.user.append(self.item['chat_input_text'])
-    responce = anvil.server.call('ask', self.item['chat_input_text']))
-    self.system.append(responce)
-    self.render()
+    try:
+      task = anvil.server.call('start_asking', self.item['chat_input_text'])
+      while not task.is_completed():
+        time.sleep(1)  # Wait a bit before checking again
+
+    # Get the result
+      responce = task.get_return_value()
+      self.system.append(responce)
+      self.render()
+    except anvil.server.TimeoutError:
+        # Show a notification banner if timeout occurs
+        Notification("The request timed out. Please try again.", title="Timeout Error", style="error").show()
 
   def input_text_pressed_enter(self, **event_args):
     """This method is called when the user presses Enter in this text box"""
