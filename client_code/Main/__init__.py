@@ -14,6 +14,8 @@ import time
 class Main(MainTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
+    self.model_selection.selected_value = "o1-mini"
+    self.context_retrieval.selected_value = "50"
     self.wellcome_message = "```Hello I am an expert in EGW Writtings, how can I help you.```"
     self.item['chat_output'] = self.wellcome_message
     self.item['chat_input_text'] = ""
@@ -28,9 +30,9 @@ class Main(MainTemplate):
     self.item['chat_output'] = self.wellcome_message
     for i in range(max(len(self.user), len(self.system))):
         if i < len(self.user):
-          self.item['chat_output'] += "\n\n```" + self.user[i] + "```"
+          self.item['chat_output'] += "\n\n\n---\n> ```" + self.user[i] + "```"
         if i < len(self.system):
-          self.item['chat_output'] += "\n" + self.system[i]
+          self.item['chat_output'] += "\n---\n\n" + self.system[i]
     self.refresh_data_bindings()
                        
 
