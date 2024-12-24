@@ -12,11 +12,8 @@ components:
         margin: ['10', '5', '10', null]
         padding: [null, null, 0, null]
     type: RichText
-  - layout_properties: {grid_position: 'MGHOUC,NKIFWH'}
-    name: cost_label
-    properties: {icon: 'fa:dollar'}
-    type: Label
-  - layout_properties: {full_width_row: true, grid_position: 'KQJFSL,WSXHYH'}
+  - data_bindings: []
+    layout_properties: {full_width_row: true, grid_position: 'KQJFSL,WSXHYH'}
     name: cost_lable
     properties: {icon: 'fa:dollar', icon_align: left, spacing_above: large, text: ''}
     type: Label
@@ -36,7 +33,7 @@ components:
   - layout_properties: {grid_position: 'AZMHCU,MXRSEO ETQZTE,WCGPQM'}
     name: context_retrieval
     properties:
-      items: ['10', '20', '30', '40', '50']
+      items: ['10', '20', '30', '40', '50', '80', '100', '150']
     type: DropDown
   - event_bindings: {click: send_button_click}
     layout_properties: {grid_position: 'AZMHCU,DMRNMS QPDSTC,RCYENU'}
