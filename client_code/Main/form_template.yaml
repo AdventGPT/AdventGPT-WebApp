@@ -3,7 +3,7 @@ components:
   - data_bindings:
     - {code: '', property: data, writeback: false}
     - {code: 'self.item[''chat_output'']', property: content, writeback: false}
-    layout_properties: {full_width_row: true, grid_position: 'GRPDYO,MFXIAC', row_background: 'theme:Primary Container'}
+    layout_properties: {full_width_row: true, grid_position: 'GRPDYO,MFXIAC', row_background: 'theme:On Primary'}
     name: chat_output
     properties:
       border: line
@@ -20,14 +20,30 @@ components:
   - data_bindings:
     - {code: 'self.item[''chat_input_text'']', property: text, writeback: true}
     event_bindings: {pressed_enter: input_text_pressed_enter}
-    layout_properties: {full_width_row: true, grid_position: 'AZMHCU,MXRSEO'}
+    layout_properties: {full_width_row: true, grid_position: 'AZMHCU,MXRSEO EBWZDX,DONTWX'}
     name: input_text
     properties: {}
     type: TextBox
+  - event_bindings: {change: model_selection_change}
+    layout_properties: {grid_position: 'AZMHCU,MXRSEO OQCQUE,QHDZJT'}
+    name: model_selection
+    properties:
+      items: [gpt-4o-mini, gpt-4o, o1-mini, o1-preview]
+    type: DropDown
+  - layout_properties: {grid_position: 'AZMHCU,MXRSEO ETQZTE,WCGPQM'}
+    name: context_retrieval
+    properties:
+      items: ['10', '20', '30', '40', '50']
+    type: DropDown
   - event_bindings: {click: send_button_click}
-    layout_properties: {grid_position: 'AZMHCU,DMRNMS'}
+    layout_properties: {grid_position: 'AZMHCU,DMRNMS QPDSTC,RCYENU'}
     name: send_button
-    properties: {background: 'theme:Secondary', foreground: 'theme:On Primary', icon: 'fa:play-circle', text: Send}
+    properties: {background: 'theme:Secondary', foreground: 'theme:On Primary', icon: 'fa:play-circle', icon_align: top, text: Send}
+    type: Button
+  - event_bindings: {click: clean_button_click}
+    layout_properties: {full_width_row: false, grid_position: 'AZMHCU,DMRNMS XMWPSW,PWVPKK', row_background: ''}
+    name: clean_button
+    properties: {background: 'theme:On Secondary Container', enabled: true, foreground: 'theme:On Primary', icon: 'fa:hand-stop-o', icon_align: top, text: Clean, visible: true}
     type: Button
   layout_properties: {slot: default}
   name: content_panel

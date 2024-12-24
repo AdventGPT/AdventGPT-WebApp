@@ -22,8 +22,8 @@ def create_client():
                         return_properties =['content', 'doc_id', "book", "chapter_title", "chapter_number", "sentence_number"])
     return client
 
-def vector_search(client,request):
+def vector_search(client,request, limit=50):
     return client.vector_search(request=request,
                       collection_name = "egw_books",
-                      limit = 50)
+                      limit = limit)
 
