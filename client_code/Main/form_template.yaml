@@ -12,6 +12,14 @@ components:
         margin: ['10', '5', '10', null]
         padding: [null, null, 0, null]
     type: RichText
+  - layout_properties: {grid_position: 'HDALKG,HUGPOW'}
+    name: label_2
+    properties: {text: 'Last Cost: '}
+    type: Label
+  - layout_properties: {grid_position: 'HDALKG,IGSVCZ'}
+    name: cost_lable
+    properties: {}
+    type: Label
   - data_bindings:
     - {code: 'self.item[''chat_input_text'']', property: text, writeback: true}
     event_bindings: {pressed_enter: input_text_pressed_enter}
@@ -26,7 +34,7 @@ components:
     type: Button
   layout_properties: {slot: default}
   name: content_panel
-  properties: {col_widths: '{"MXRSEO":50,"DMRNMS":10}'}
+  properties: {col_widths: '{"MXRSEO":50,"DMRNMS":10,"HUGPOW":10,"IGSVCZ":50}'}
   type: ColumnPanel
 - layout_properties: {slot: nav-right}
   name: navbar_links

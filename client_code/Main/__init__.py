@@ -47,7 +47,8 @@ class Main(MainTemplate):
         time.sleep(1)  # Wait a bit before checking again
 
     # Get the result
-      responce = task.get_return_value()
+      responce, cost = task.get_return_value()
+      self.cost_lable.text=cost
       self.system.append(responce)
       self.render()
     except anvil.server.TimeoutError:

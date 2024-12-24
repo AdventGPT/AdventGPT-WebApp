@@ -86,7 +86,7 @@ def ask(question):
   cost = completion_cost(completion_response=response)
   formatted_cost = f"${float(cost):.10f}"
   print(f"Cost: ${formatted_cost}")
-  return response_content
+  return response_content, formatted_cost
 
   
   
